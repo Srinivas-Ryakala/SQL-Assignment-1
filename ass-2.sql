@@ -1,4 +1,4 @@
-drop table if exists assignment2;
+
 create table assignment2(emp_id int primary key,emp_name varchar(20) ,salary int,location varchar(20),dob date,dept_id int,dept_name varchar(20),mgr_id int );
 INSERT INTO assignment2 VALUES
 (1,'srinivas',25000,'hyderaad','2003-01-26',101,'developer',5),
@@ -49,4 +49,5 @@ with cte_name as(select st_id,st_name,difference(st_name,'suresh') as similarity
 select * from cte_name 
 where similarity>=3
 order by similarity desc;
+
 
