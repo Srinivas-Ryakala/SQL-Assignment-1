@@ -38,6 +38,8 @@ select * from company;
 select c1.emp_id,c1.mgr_id,c1.emp_name,c2.emp_name as manager_name
 from company c1 join company c2
 on c2.emp_id=c1.mgr_id;
+--or
+select * from company where emp_id in (select mgr_id from company);
 
 
 --1)Write a query to find the all the names which are similar in pronouncing as suresh, sort the result in the order of similarity
@@ -49,5 +51,6 @@ with cte_name as(select st_id,st_name,difference(st_name,'suresh') as similarity
 select * from cte_name 
 where similarity>=3
 order by similarity desc;
+
 
 
