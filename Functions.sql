@@ -85,3 +85,48 @@ exec sp_rename 'temp','employe';
   --after adding bonus and check who have lessthan 50000
 
  
+ 
+ create function salaryhike(@salary int)
+ returns table 
+ as
+ return(select emp_name,emp_id,salary,salary*@salary as bonus from employe);
+ --drop function salaryhike;
+ --drop synonym salaryhike;
+ select * from dbo.salaryhike(10);
+ select emp_name,emp_id,salary,salary*10 as bonus from employe;
+
+ create synonym salaryhikennn for dbo.salaryhike;--it is  working because synonym is only work for tables,views,stored procedures and functions
+ drop synonym salaryhiken;
+ select * from salaryhikennn(10);
+exec sp_rename 'employe','temp';
+exec sp_rename 'temp','employe';
+ select * from salar,yhiken(10);
+ select * into #temp from employe;
+
+ select dbo.salaryincrement(salary) from employe;
+  
+  
+  select dbo.salaryincrement(salary) from #temp;--generally functoons wont work for temp tables only scalar functions work and tvfs wont work
+  
+  create function salaryhiketemp(@salary int)
+ returns table 
+ as
+ return(select emp_name,emp_id,salary,salary*@salary as bonus from #temp);
+ --Cannot access temporary tables from within a function.
+
+  select * from dbo.salaryhiketemp (10);
+
+  alter function maxi(@num int)
+  returns table
+  as return(select max(@num) as maxsalary from employe);
+  select * from dbo.maxi(10000) ;
+  select max(salary) from employe;
+
+  alter function maximum(@nax int)
+  returns table
+  --@nax=isnull(@nax,0);
+  as
+ return(
+  select top 1 isnull(@nax,0)*10 as maxi from employe
+  order by emp_name desc);
+  select  * from  maximum('srinu');
