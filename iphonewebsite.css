@@ -1,0 +1,130 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+}
+
+body{
+    background-color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* background-image: url(/Apple-website/ChatGPT\ Image\ Sep\ 20\,\ 2025\,\ 12_46_58\ PM.png); */
+    /* background-repeat: no-repeat; */
+    
+   background-position: top
+  
+  /* background-size: cover; */
+
+}
+.banner img {
+  width: 100%;   
+  height: 100vh;  
+  display: block;
+}
+
+
+.parent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: red;
+    flex-wrap: wrap;
+}
+.parent .logo{
+    font-weight: bold;
+    font-size: 30px;
+    align-self: center;
+}
+.search {
+    flex: 2;
+    display: flex;
+    justify-self:center ;
+    align-items: center;
+    gap: 5px;
+    margin: 0 20px;
+    flex-wrap: wrap;
+ 
+}
+ .search input{
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;   
+}
+
+.navbar {
+    flex-grow: 0.1;
+    display: flex;
+    justify-content: space-around;
+    /* gap: 40px; */
+    gap: 5px;
+    align-items: center;
+}
+.navbar a{
+    flex-grow: 1;
+    /* padding: 0px 0px 0px 40px; */
+   /* gap: 40px; */
+    text-decoration: none;
+}
+.login{
+    align-self: center;
+}
+.Login a{
+
+    text-decoration: none;
+    padding-left: 10px;
+}
+.section-header {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns side by side */
+    gap: 20px;
+    padding: 20px;
+}
+
+.prod-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.prod-card img {
+width: 100%;
+    height: 250px;        /* same box height for all */
+    object-fit: contain;  /* keeps full image, no cropping */
+    background-color: #f9f9f9; /* gives a neutral background */
+    padding: 10px;        /* spacing around images */
+    border-radius: 10px;
+
+}
+
+.buy {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.buy a{
+    text-decoration: none;
+      color: white;
+}
+
